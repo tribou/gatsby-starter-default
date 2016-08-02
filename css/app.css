@@ -79,7 +79,6 @@ a {
 }
 
 input {
-  @mixin input-style;
 
   &::placeholder {
     /* IE equivalent */

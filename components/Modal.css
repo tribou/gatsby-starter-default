@@ -1,0 +1,71 @@
+.modal {
+  background-color: $colorDarkFaded;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $zModalBackdrop;
+  opacity: 0;
+  transition: opacity 0.3s;
+
+  &.animate {
+    opacity: 1;
+  }
+
+  .content {
+    @media (max-width: 1400px) {
+      padding: 2rem;
+    }
+    @media (max-width: $screenLgMax) {
+      padding: 2rem;
+      min-width: 90%;
+    }
+    @media (max-width: $screenXsMax) {
+      padding: 1rem;
+      min-width: 95%;
+    }
+    background-color: $colorWhite;
+    color: $colorDark;
+    position: fixed;
+    border-radius: 15px;
+    min-width: 300px;
+    min-height: 300px;
+    max-width: 90%;
+    max-height: 97%;
+    overflow-y: auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 3rem;
+    z-index: $zModal;
+    opacity: 0;
+    transition: opacity 0.3s;
+
+    h2 {
+      font-size: 1.3rem;
+      line-height: 1.8rem;
+      margin: 0;
+    }
+
+    p {
+      @media (max-width: $screenSmMax) {
+        font-size: 1rem;
+      }
+      font-size: .9rem;
+      line-height: 1.8em;
+      margin-top: 0;
+    }
+
+    &.animate {
+      opacity: 1;
+    }
+  }
+
+  .close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+  }
+}
