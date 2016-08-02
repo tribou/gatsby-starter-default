@@ -1,0 +1,3 @@
+.my-image {
+  @mixin image my-image, 100px, 100px;
+}

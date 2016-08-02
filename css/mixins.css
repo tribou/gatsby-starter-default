@@ -1,0 +1,104 @@
+/* GLOBAL MIXINS */
+
+@define-mixin image $name, $width, $height, $ratio: .5 {
+  @media (max-resolution: 1dppx) {
+    background-image: url(../pages/images/$(name).png);
+  }
+  background-image: url(../pages/images/$(name)@2x.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: calc($width * $ratio);
+  height: calc($height * $ratio);
+  display: inline-block;
+}
+
+
+@define-mixin image-url $url, $width, $height, $ratio: .5 {
+  background-image: url($url);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: calc($width * $ratio);
+  height: calc($height * $ratio);
+  display: inline-block;
+}
+
+
+@define-mixin splash $name {
+  @media (max-resolution: 1dppx) {
+    background-image: url(../pages/images/$(name).png);
+  }
+  background-image: url(../pages/images/$(name)@2x.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+@define-mixin splash-url $url {
+  background-image: url($url);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+@define-mixin video-splash {
+  /*
+    Parent element needs:
+    position: relative;
+    overflow: hidden;
+  */
+
+  @media (max-width: 1025px) {
+    display: none;
+  }
+
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+
+@define-mixin sprite $name, $width, $height, $ratio: .5 {
+  @media (max-resolution: 1dppx) {
+    background-image: url(../pages/images/$(name).png);
+  }
+  background-image: url(../pages/images/$(name)@2x.png);
+  background-position: 0px 0px;
+  background-repeat: no-repeat;
+  background-size: calc($width * $ratio) calc($height * 2 * $ratio);
+  width: calc($width * $ratio);
+  height: calc($height * $ratio);
+  display: inline-block;
+
+  &:hover {
+    background-position: 0px calc($height * -$(ratio));
+  }
+}
+
+
+@define-mixin page-padding-sides {
+
+  @media (max-width: $screenLgMax) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  @media (max-width: $screenSmMax) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  padding-left: 8rem;
+  padding-right: 8rem;
+}

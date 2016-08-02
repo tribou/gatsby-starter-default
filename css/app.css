@@ -1,0 +1,88 @@
+/* include normalize before everything */
+@import '../node_modules/normalize.css/normalize.css';
+
+
+/* GLOBAL STYLES */
+html {
+
+  @media (max-width: $screenMdMax) {
+    font-size: 18px;
+  }
+  @media (max-width: $screenSmMax) {
+    font-size: 16px;
+  }
+  @media (max-width: $screenXsMax) {
+    font-size: 16px;
+  }
+
+  box-sizing: border-box;
+  font-size: 22px;
+  font-weight: $fontWeight;
+  line-height: 1.8em;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  outline: none;
+  font-family: $fontFamily;
+  font-weight: $fontWeight;
+}
+
+button {
+  cursor: pointer;
+}
+
+body {
+  color: $colorDark;
+}
+
+h1, h2, h3, h4 {
+  text-transform: uppercase;
+  color: $colorTheme;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 35px;
+  line-height: 1.1em;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+h4 {
+  font-size: .8rem;
+}
+
+h5 {
+  font-size: 22px;
+}
+
+a {
+  cursor: pointer;
+  color: $colorTheme;
+  text-decoration: none;
+
+  &:hover {
+    color: $colorThemeAlternate;
+  }
+
+  &:focus, &:active {
+    color: $colorTheme;
+    outline: none;
+    text-decoration: none;
+  }
+}
+
+input {
+  @mixin input-style;
+
+  &::placeholder {
+    /* IE equivalent */
+    opacity: .5;
+  }
+}

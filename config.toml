@@ -1,2 +1,19 @@
-siteTitle="Gatsby Starter Site"
-linkPrefix = "/gatsby-starter-default"
+linkPrefix = "/"
+
+contactEmail = "ninja@mailinator.com"
+
+favicon = "/favicon.ico"
+faviconSizes = "16x16 32x32 48x48"
+siteIcon = "/images/icon.png"
+siteIconSize = "72x72"
+siteLogo152 = "/images/logo-152.png"
+siteLogo180 = "/images/logo-180.png"
+siteLogo = "/images/logo-512.png"
+siteLogoWidth = "512"
+siteLogoHeight = "512"
+
+appTitle = "Starter"
+siteTitle = "Gatsby Starter Hapi"
+
+siteUrl = "http://gatsby-starter-hapi.herokuapp.com"
+siteDescription = "Create a performant static site with ease."
