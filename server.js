@@ -64,6 +64,22 @@ server.register([
     },
   })
 
+  server.ext('onPreResponse', (request, reply) => {
+
+    if (request.response.isBoom) {
+
+      if (request.response.output.statusCode === 404) {
+
+        return reply.redirect('/404')
+
+      }
+
+    }
+
+    return reply.continue()
+
+  })
+
   server.start(() => {
 
     server.log(['info'], `Server running at: ${server.info.uri}`)

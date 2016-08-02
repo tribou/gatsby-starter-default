@@ -27,3 +27,6 @@ build/Release
 node_modules
 .gatsby-context.js
 .sass-cache/
+*.swp
+.DS_Store
+.env
