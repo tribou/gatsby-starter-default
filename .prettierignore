@@ -1,0 +1,6 @@
+bin/
+node_modules/
+public/
+.cache/
+.git/
+.firebase/

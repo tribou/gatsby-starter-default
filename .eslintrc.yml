@@ -1,0 +1,27 @@
+extends:
+  - plugin:tribou/recommended
+  - prettier
+  - prettier/flowtype
+  - prettier/react
+
+plugins:
+  - tribou
+
+# settings:
+#   import/resolver: webpack
+
+globals:
+  # Global Flow Types
+  # https://github.com/babel/babel-eslint/issues/130#issuecomment-111216872
+  BuildAssets: false
+  CssLoaders: false
+  graphql: false
+  react: false
+  prop-types: false
+
+rules:
+  # camelcase: 0
+  import/first:
+    - absolute-first: false
+  react/sort-comp: 0
+  react/prop-types: 0
