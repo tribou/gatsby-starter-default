@@ -1,33 +1,21 @@
-import React from "react";
+import React, { PureComponent } from "react";
 import { Link } from "gatsby";
 
-const Header = ({ siteTitle }) => (
-  <div
-    style={{
-      background: "rebeccapurple",
-      marginBottom: "1.45rem",
-    }}
-  >
-    <div
-      style={{
-        margin: "0 auto",
-        maxWidth: 960,
-        padding: "1.45rem 1.0875rem",
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: "white",
-            textDecoration: "none",
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </div>
-);
+import css from "./header.module.css";
 
-export default Header;
+export default class Header extends PureComponent {
+  render() {
+    const { siteTitle } = this.props;
+    return (
+      <div className={css.background}>
+        <div className={css.container}>
+          <h1 className={css.h1}>
+            <Link className={css.link} to="/">
+              {siteTitle}
+            </Link>
+          </h1>
+        </div>
+      </div>
+    );
+  }
+}
